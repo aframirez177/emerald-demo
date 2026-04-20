@@ -35,9 +35,13 @@ export function initScrollVideo({
   const host = document.querySelector(hostSelector);
   if (!host) return null;
 
+  const isMobile = window.matchMedia("(max-width: 699px)").matches;
   const config = {
     frameCount: parseInt(host.dataset.frameCount || "0", 10),
-    frameBase: host.dataset.frameBase || "",
+    frameBase:
+      (isMobile && host.dataset.frameBaseMobile) ||
+      host.dataset.frameBase ||
+      "",
     framePad: parseInt(host.dataset.framePad || "4", 10),
     frameExt: host.dataset.frameExt || "webp",
     sectionVh: parseFloat(
@@ -58,7 +62,6 @@ export function initScrollVideo({
 
   const ctx = canvas.getContext("2d", { alpha: true });
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const narrow = window.innerWidth < 700;
 
   const frames = new Array(config.frameCount);
   const frameUrl = (i) =>
@@ -68,7 +71,8 @@ export function initScrollVideo({
   let bgColor = "#FFFFFF";
 
   const resize = () => {
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    // Cap DPR to 1 on mobile to keep canvas backing-store memory small.
+    const dpr = isMobile ? 1 : Math.min(2, window.devicePixelRatio || 1);
     const { clientWidth: w, clientHeight: h } = canvas;
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
@@ -132,7 +136,7 @@ export function initScrollVideo({
   };
 
   const bindScroll = () => {
-    if (reduced || narrow) {
+    if (reduced) {
       host.dataset.scrollVideoState = "static";
       return;
     }
