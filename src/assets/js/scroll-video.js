@@ -180,18 +180,19 @@ export function initScrollVideo({
       }
     }
 
-    // Fade canvas in/out at section edges (for mid-scroll sections that
-    // shouldn't be visible outside their range). Fade-in starts early —
-    // while the previous section is still in view — so the animation
-    // begins to appear instead of popping in on arrival.
+    // Fade canvas in/out at section edges. The canvas is position:fixed
+    // with z-index above prior content, so fade-in MUST wait until the
+    // section is actually entering the viewport — otherwise the ring
+    // ghosts over whatever section preceded it.
     if (fadeEdges) {
       gsap.set(canvas, { opacity: 0 });
 
-      // Fade IN — begins half a viewport before the section enters.
+      // Fade IN — starts only as the section begins entering the viewport
+      // (host top touches viewport bottom) and completes ~35vh later.
       ScrollTrigger.create({
         trigger: host,
-        start: "top bottom+=50%",   // 50vh below the viewport bottom
-        end: "top 40%",              // ~40% from the top of viewport
+        start: "top bottom",         // host top at viewport bottom
+        end: "top 65%",              // host top at 65% from viewport top
         scrub: true,
         onUpdate: (self) => {
           canvas.style.opacity = self.progress.toFixed(3);
