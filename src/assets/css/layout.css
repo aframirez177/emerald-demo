@@ -394,6 +394,16 @@
   background: var(--surface-2);
   transition: transform 400ms ease;
 }
+.piece__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+/* Color-gradient placeholder — shown only when no <img> is present. */
 .piece__media::before {
   content: "";
   position: absolute; inset: 0;
@@ -411,6 +421,10 @@
     to bottom,
     transparent 55%,
     rgba(14, 14, 12, 0.45) 100%);
+}
+.piece__media:has(.piece__img)::before,
+.piece__media:has(.piece__img)::after {
+  display: none;
 }
 .piece[data-mine="muzo"]    { --accent: #2F5A3F; }
 .piece[data-mine="chivor"]  { --accent: #1F5060; }
