@@ -97,9 +97,7 @@
               <textarea class="form__textarea" id="message" name="message" required placeholder="Tell us about your project, the occasion, or the stone you have in mind."></textarea>
             </div>
 
-            <div class="form__turnstile" aria-label="Anti-bot verification">
-              [Turnstile — Cloudflare key wired at deploy]
-            </div>
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none" aria-hidden="true">
 
             <p class="form__legal">
               By submitting this form, you consent to the processing of this information for the sole purpose of responding to your inquiry. We retain your data for a maximum of 12 months, then delete it. See our <a href="/en/privacy/">privacy policy</a> to exercise your rights of access, correction, and withdrawal (Quebec Law 25).
@@ -118,6 +116,13 @@
             <h2 class="contact-thanks__title">Thank you — we'll respond within 48 hours.</h2>
             <p>
               Your inquiry is logged. We'll write back from <a href="mailto:contact@emerald.co">contact@emerald.co</a> within two business days. If it's urgent, reply directly to that email.
+            </p>
+          </div>
+
+          <div class="contact-error" hidden data-contact-error>
+            <p class="t-meta" style="color: var(--bronze);">Something went wrong</p>
+            <p>
+              We couldn't send your message right now. Please try again in a moment, or email us directly at <a href="mailto:contact@emerald.co">contact@emerald.co</a>.
             </p>
           </div>
         </div>

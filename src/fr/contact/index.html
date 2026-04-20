@@ -97,9 +97,7 @@
               <textarea class="form__textarea" id="message" name="message" required placeholder="Parlez-nous de votre projet, de l'occasion, ou de la pierre qui vous intéresse."></textarea>
             </div>
 
-            <div class="form__turnstile" aria-label="Vérification anti-robot">
-              [Turnstile — clé Cloudflare intégrée au déploiement]
-            </div>
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none" aria-hidden="true">
 
             <p class="form__legal">
               En soumettant ce formulaire, vous consentez au traitement de ces renseignements aux seules fins d'une réponse à votre demande. Nous conservons vos données pour une durée maximale de 12 mois, puis nous les supprimons. Consultez notre <a href="/fr/confidentialite/">politique de confidentialité</a> pour l'exercice de vos droits d'accès, de rectification et de retrait (Loi 25).
@@ -118,6 +116,13 @@
             <h2 class="contact-thanks__title">Merci — nous vous répondrons sous 48 heures.</h2>
             <p>
               Votre demande est enregistrée. Nous vous écrirons depuis <a href="mailto:contact@emerald.co">contact@emerald.co</a> dans les deux jours ouvrables. Si c'est urgent, répondez directement à ce courriel.
+            </p>
+          </div>
+
+          <div class="contact-error" hidden data-contact-error>
+            <p class="t-meta" style="color: var(--bronze);">Une erreur est survenue</p>
+            <p>
+              Nous n'avons pas pu envoyer votre message pour le moment. Veuillez réessayer dans un instant, ou écrivez-nous directement à <a href="mailto:contact@emerald.co">contact@emerald.co</a>.
             </p>
           </div>
         </div>
