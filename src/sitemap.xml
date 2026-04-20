@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://emerald.co/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://emerald.co/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://emerald.co/fr/collections/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/collections/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/collections/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/collections/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emerald.co/en/collections/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/collections/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/collections/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/collections/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://emerald.co/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/contact/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emerald.co/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/contact/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://emerald.co/fr/confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/confidentialite/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://emerald.co/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/confidentialite/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

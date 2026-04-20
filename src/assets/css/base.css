@@ -1,0 +1,157 @@
+/* ===================================================================
+   emerald.co — base.css
+   Palette, typography, type scale, reset. Do NOT deviate without
+   updating CLAUDE.md §2.
+   =================================================================== */
+
+/* --- Self-hosted Pangram Pangram fonts (fallback graceful if missing) -- */
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("/assets/fonts/PPEditorialNew-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("/assets/fonts/PPEditorialNew-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/assets/fonts/PPNeueMontreal-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/assets/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Tokens (locked, per CLAUDE.md §2) --------------------------------- */
+:root {
+  /* Palette */
+  --ink:        #0E0E0C;
+  --paper:      #F8F6F1;
+  --bronze:     #987654;
+  --gold:       #ECD06F;
+  --stone:      #9C9C9C;
+  --emerald:    #0A4F3C;
+  --surface-2:  #EFEBE2;
+  --border:     rgba(14, 14, 12, 0.08);
+
+  /* Type families */
+  --font-display: "PP Editorial New", "Fraunces", "EB Garamond", Georgia, serif;
+  --font-body:    "PP Neue Montreal", "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Fluid type scale */
+  --fs-display:   clamp(4rem, 10vw, 10rem);
+  --fs-h1:        clamp(3rem, 6vw, 6rem);
+  --fs-h2:        clamp(2rem, 4vw, 4rem);
+  --fs-h3:        clamp(1.5rem, 2.5vw, 2.5rem);
+  --fs-body:      clamp(1rem, 1.125vw, 1.125rem);
+  --fs-caption:   0.875rem;
+  --fs-meta:      0.75rem;
+
+  /* Line-height */
+  --lh-tight:   1.05;
+  --lh-heading: 1.15;
+  --lh-body:    1.6;
+
+  /* Tracking */
+  --tracking-tight:  -0.03em;
+  --tracking-normal: -0.01em;
+  --tracking-wide:    0.08em;
+
+  /* Spacing (fluid) */
+  --space-xs:  clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm:  clamp(0.75rem, 1.5vw, 1rem);
+  --space-md:  clamp(1.25rem, 2.5vw, 2rem);
+  --space-lg:  clamp(2rem, 5vw, 4rem);
+  --space-xl:  clamp(4rem, 10vw, 8rem);
+  --space-2xl: clamp(6rem, 15vw, 12rem);
+
+  /* Layout */
+  --container-max: 1600px;
+  --gutter:        clamp(1.5rem, 4vw, 3rem);
+  --header-height: 72px;  /* fixed .site-header height — used to offset */
+                          /* the mid-scroll canvas so the nav doesn't clip it */
+}
+
+/* --- Reset ------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+}
+p { text-wrap: pretty; }
+h1, h2, h3, h4 { text-wrap: balance; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--bronze); transition: color 180ms ease; }
+
+::selection { background: var(--emerald); color: var(--paper); }
+
+/* --- Type primitives ------------------------------------------------- */
+.t-display { font-family: var(--font-display); font-size: var(--fs-display); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); }
+.t-h1      { font-family: var(--font-display); font-size: var(--fs-h1);      line-height: var(--lh-heading); letter-spacing: var(--tracking-tight); }
+.t-h2      { font-family: var(--font-display); font-size: var(--fs-h2);      line-height: var(--lh-heading); letter-spacing: var(--tracking-tight); }
+.t-h3      { font-family: var(--font-display); font-size: var(--fs-h3);      line-height: var(--lh-heading); }
+.t-body    { font-size: var(--fs-body); line-height: var(--lh-body); }
+.t-caption { font-size: var(--fs-caption); color: var(--stone); }
+.t-meta    { font-size: var(--fs-meta); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--stone); }
+
+/* --- Accessibility ---------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F6F1">
+
+  <title>Nous joindre — Emerald | Émeraudes colombiennes au Québec</title>
+  <meta name="description" content="Consultation privée pour pièces sur mesure ou pièces existantes. Réponse sous 48 heures depuis Montréal.">
+
+  <meta property="og:title" content="Nous joindre — Emerald">
+  <meta property="og:description" content="Consultation privée pour pièces d'émeraude colombienne. Réponse sous 48 heures.">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:locale:alternate" content="en_CA">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emerald.co/fr/contact/">
+
+  <link rel="canonical" href="https://emerald.co/fr/contact/">
+  <link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/contact/">
+  <link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/contact/">
+  <link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/contact/">
+
+  <link rel="preload" href="/assets/fonts/PPEditorialNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "lenis": "https://esm.sh/lenis@1.1.20",
+      "gsap": "https://esm.sh/gsap@3.12.5",
+      "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/fr/" class="site-header__brand">Emerald</a>
+    <nav class="site-header__nav" aria-label="Navigation principale">
+      <ul class="site-header__links">
+        <li><a href="/fr/">Accueil</a></li>
+        <li><a href="/fr/collections/">Collections</a></li>
+        <li><a href="/fr/heritage/">Héritage</a></li>
+        <li><a href="/fr/contact/" aria-current="page">Nous joindre</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Sélecteur de langue">
+        <a href="/fr/contact/" data-lang="fr" class="lang-toggle__code" aria-current="true">FR</a>
+        <span class="lang-toggle__sep">·</span>
+        <a href="/en/contact/" data-lang="en" class="lang-toggle__code" aria-current="false">EN</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">04 — Nous joindre</p>
+        <h1 class="page-hero__title">Chaque pierre a une histoire. Parlons de la vôtre.</h1>
+        <p class="page-hero__lede">
+          Consultation privée — à Montréal ou à distance. Réponse sous 48 heures. Nous travaillons en français et en anglais, au rythme de la pièce.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid">
+        <div class="col-7">
+          <form class="form" data-contact-form data-submitting-label="Envoi en cours…" novalidate>
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label" for="name">Nom complet <span class="form__required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="text" id="name" name="name" autocomplete="name" required placeholder="Prénom Nom">
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="email">Courriel <span class="form__required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="email" id="email" name="email" autocomplete="email" required placeholder="vous@exemple.ca">
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="piece">Pièce d'intérêt</label>
+              <select class="form__select" id="piece" name="piece">
+                <option value="">— Choisir (optionnel) —</option>
+                <option value="muzo">Muzo — vert profond, pièces signature</option>
+                <option value="chivor">Chivor — vert bleuté, cristallin</option>
+                <option value="coscuez">Coscuez — vert intense, caractère</option>
+                <option value="sur-demande">Pièce sur demande (haute joaillerie)</option>
+              </select>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="message">Message <span class="form__required" aria-hidden="true">*</span></label>
+              <textarea class="form__textarea" id="message" name="message" required placeholder="Parlez-nous de votre projet, de l'occasion, ou de la pierre qui vous intéresse."></textarea>
+            </div>
+
+            <div class="form__turnstile" aria-label="Vérification anti-robot">
+              [Turnstile — clé Cloudflare intégrée au déploiement]
+            </div>
+
+            <p class="form__legal">
+              En soumettant ce formulaire, vous consentez au traitement de ces renseignements aux seules fins d'une réponse à votre demande. Nous conservons vos données pour une durée maximale de 12 mois, puis nous les supprimons. Consultez notre <a href="/fr/confidentialite/">politique de confidentialité</a> pour l'exercice de vos droits d'accès, de rectification et de retrait (Loi 25).
+            </p>
+
+            <div class="form__actions">
+              <button class="btn" type="submit">
+                Envoyer la demande <span class="btn__arrow" aria-hidden="true">→</span>
+              </button>
+              <span class="t-caption" style="color: var(--stone);">Réponse sous 48 h.</span>
+            </div>
+          </form>
+
+          <div class="contact-thanks" hidden data-contact-thanks>
+            <p class="t-meta" style="color: var(--bronze);">Bien reçu</p>
+            <h2 class="contact-thanks__title">Merci — nous vous répondrons sous 48 heures.</h2>
+            <p>
+              Votre demande est enregistrée. Nous vous écrirons depuis <a href="mailto:contact@emerald.co">contact@emerald.co</a> dans les deux jours ouvrables. Si c'est urgent, répondez directement à ce courriel.
+            </p>
+          </div>
+        </div>
+
+        <aside class="col-4" style="grid-column-start: 9;">
+          <p class="section__eyebrow" style="margin-bottom: var(--space-md);">À propos</p>
+          <h2 class="t-h3" style="margin-bottom: var(--space-sm);">Montréal, Québec</h2>
+          <p class="section__body" style="margin-bottom: var(--space-lg);">
+            Atelier sur rendez-vous au centre-ville. Consultation virtuelle disponible partout au Canada et en Colombie.
+          </p>
+
+          <p class="t-meta" style="color: var(--stone);">Courriel</p>
+          <p style="margin-bottom: var(--space-md);"><a href="mailto:contact@emerald.co">contact@emerald.co</a></p>
+
+          <p class="t-meta" style="color: var(--stone);">Horaires</p>
+          <p style="margin-bottom: var(--space-md);">
+            Lundi au vendredi<br>
+            10 h — 18 h (HE)
+          </p>
+
+          <p class="t-meta" style="color: var(--stone);">Langues</p>
+          <p>Français · English · Español</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid">
+        <div class="col-4">
+          <p class="t-h3" style="margin-bottom: var(--space-sm);">Emerald</p>
+          <p class="t-caption" style="color: var(--stone); max-width: 32ch;">
+            Émeraudes colombiennes, réimaginées pour le collectionneur canadien.
+          </p>
+        </div>
+        <nav class="col-3" aria-label="Navigation du pied de page">
+          <p class="t-meta" style="margin-bottom: var(--space-sm);">Navigation</p>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 0.5rem;">
+            <li><a href="/fr/collections/">Collections</a></li>
+            <li><a href="/fr/heritage/">Héritage</a></li>
+            <li><a href="/fr/contact/">Nous joindre</a></li>
+          </ul>
+        </nav>
+        <div class="col-3">
+          <p class="t-meta" style="margin-bottom: var(--space-sm);">Suivez</p>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 0.5rem;">
+            <li><a href="#" rel="noopener">Instagram</a></li>
+            <li><a href="#" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <p class="t-meta" style="margin-bottom: var(--space-sm);">Contact</p>
+          <a href="mailto:contact@emerald.co">contact@emerald.co</a>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>© 2026 Emerald · Montréal, Québec</span>
+        <span><a href="/fr/confidentialite/">Politique de confidentialité</a></span>
+      </div>
+      <span class="site-footer__demo-note">
+        Démonstration de portfolio — <a href="https://ramirez.dev" rel="noopener">Álvaro Ramírez Núñez</a>.
+      </span>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F6F1">
+
+  <title>Emerald — Colombian Emeralds, Fine Jewelry in Quebec</title>
+  <meta name="description" content="Colombian emerald jewelry — Muzo, Chivor, Coscuez. Certified stones, Quebec atelier, traceable sourcing.">
+
+  <meta property="og:title" content="Emerald — Colombian Emeralds">
+  <meta property="og:description" content="Colombian emerald jewelry — Muzo, Chivor, Coscuez. Certified stones, Quebec atelier.">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:locale:alternate" content="fr_CA">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emerald.co/en/">
+
+  <link rel="canonical" href="https://emerald.co/en/">
+  <link rel="alternate" hreflang="fr-CA" href="https://emerald.co/fr/">
+  <link rel="alternate" hreflang="en-CA" href="https://emerald.co/en/">
+  <link rel="alternate" hreflang="x-default" href="https://emerald.co/fr/">
+
+  <link rel="preload" href="/assets/fonts/PPEditorialNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "lenis": "https://esm.sh/lenis@1.1.20",
+      "gsap": "https://esm.sh/gsap@3.12.5",
+      "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://emerald.co/#org",
+        "name": "Emerald",
+        "alternateName": "Emerald Montréal",
+        "url": "https://emerald.co/",
+        "description": "Fine Colombian emerald jewelry — certified stones from the historic Muzo, Chivor, and Coscuez mines. Quebec atelier, bilingual.",
+        "founder": {
+          "@type": "Person",
+          "name": "Camille Montréal-Restrepo"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CA",
+          "addressRegion": "QC",
+          "addressLocality": "Montréal"
+        },
+        "areaServed": ["CA", "US", "CO"],
+        "knowsLanguage": ["fr-CA", "en-CA", "es"],
+        "sameAs": []
+      },
+      {
+        "@type": "Product",
+        "name": "Fura ring — 2.4 ct Muzo",
+        "brand": { "@id": "https://emerald.co/#org" },
+        "manufacturer": { "@id": "https://emerald.co/#org" },
+        "material": "Muzo emerald (Colombia), 18K yellow gold",
+        "description": "Solitaire ring, oval-cut 2.4 ct emerald from the Muzo mine, 18K yellow-gold setting. One of a kind.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "18400",
+          "availability": "https://schema.org/InStock",
+          "url": "https://emerald.co/en/collections/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Somondoco pendant — 1.8 ct Chivor",
+        "brand": { "@id": "https://emerald.co/#org" },
+        "manufacturer": { "@id": "https://emerald.co/#org" },
+        "material": "Chivor emerald (Colombia), 18K white gold",
+        "description": "Pendant, emerald-cut 1.8 ct stone from the Chivor mine, 18K white-gold chain (45 cm). Edition of 3.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "12900",
+          "availability": "https://schema.org/LimitedAvailability",
+          "url": "https://emerald.co/en/collections/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Minero earrings — 2 × 0.9 ct Coscuez",
+        "brand": { "@id": "https://emerald.co/#org" },
+        "manufacturer": { "@id": "https://emerald.co/#org" },
+        "material": "Coscuez emeralds (Colombia), 18K yellow gold",
+        "description": "Pair of earrings, round-brilliant emeralds 2 × 0.9 ct from the Coscuez mine, 18K yellow-gold posts. Made to order.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "6200",
+          "availability": "https://schema.org/MadeToOrder",
+          "url": "https://emerald.co/en/collections/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Tena ring — 4.1 ct Muzo, platinum",
+        "brand": { "@id": "https://emerald.co/#org" },
+        "manufacturer": { "@id": "https://emerald.co/#org" },
+        "material": "Muzo emerald (Colombia), platinum, diamonds",
+        "description": "High-jewelry ring, cushion-cut 4.1 ct emerald from Muzo, pavé diamonds, platinum band. One of a kind.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://emerald.co/en/collections/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Somondoco Reserve necklace",
+        "brand": { "@id": "https://emerald.co/#org" },
+        "manufacturer": { "@id": "https://emerald.co/#org" },
+        "material": "Graduated Chivor emeralds (Colombia), 18K white gold",
+        "description": "Rivière necklace, eleven graduated Chivor emeralds, 18K white gold. One-of-a-kind piece, approximately four months of artisanal production.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://emerald.co/en/collections/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Muisca bracelet — 5 × 0.4 ct Coscuez",
+        "brand": { "@id": "https://emerald.co/#org" },
+        "manufacturer": { "@id": "https://emerald.co/#org" },
+        "material": "Coscuez emeralds (Colombia), 18K yellow gold",
+        "description": "Link bracelet, five Coscuez emeralds 5 × 0.4 ct, 18K yellow gold, concealed clasp. Edition of 5.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "4800",
+          "availability": "https://schema.org/LimitedAvailability",
+          "url": "https://emerald.co/en/collections/"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://emerald.co/#website",
+        "url": "https://emerald.co/",
+        "name": "Emerald",
+        "inLanguage": ["en-CA", "fr-CA"],
+        "publisher": { "@id": "https://emerald.co/#org" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/en/" class="site-header__brand">Emerald</a>
+    <nav class="site-header__nav" aria-label="Main navigation">
+      <ul class="site-header__links">
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/collections/">Collections</a></li>
+        <li><a href="/en/heritage/">Heritage</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <a href="/fr/" data-lang="fr" class="lang-toggle__code" aria-current="false">FR</a>
+        <span class="lang-toggle__sep">·</span>
+        <a href="/en/" data-lang="en" class="lang-toggle__code" aria-current="true">EN</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero"
+             aria-labelledby="hero-title-en"
+             data-hero-video
+             data-frame-count="192"
+             data-frame-base="/assets/frames/hero-ring/frame_"
+             data-frame-pad="4"
+             data-frame-ext="webp"
+             data-hero-scroll-vh="180">
+      <div class="hero__pin" data-hero-pin>
+        <canvas class="hero__video-canvas" aria-hidden="true"></canvas>
+        <div class="hero__overlay" data-hero-text>
+          <div class="hero__overlay-inner container">
+            <p class="t-meta" data-hero-eyebrow style="margin-bottom: var(--space-md); color: var(--bronze);">
+              Colombian Emerald Jewelry — Quebec
+            </p>
+            <h1 id="hero-title-en" class="t-display" data-hero-title style="max-width: 14ch;">
+              The finest green<br>on earth.
+            </h1>
+            <p class="section__body" data-hero-body style="margin-top: var(--space-md); max-width: 48ch;">
+              From the mines of Muzo, Chivor, and Coscuez — to your collection. Certified stones, documented provenance, pieces built to outlast a generation.
+            </p>
+            <div data-hero-cta style="margin-top: var(--space-lg); display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+              <a class="btn" href="/en/collections/">
+                Explore the collection <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn--ghost" href="/en/contact/">Contact us</a>
+            </div>
+          </div>
+          <div class="hero__scroll-hint" data-hero-scroll-hint>
+            <span class="container" style="display:flex;justify-content:space-between;width:100%;">
+              <span>01 — Origin</span>
+              <span>Scroll to rotate the stone</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="authority" aria-labelledby="authority-title-en">
+      <div class="container grid">
+        <div class="col-2">
+          <p class="section__eyebrow">01 — Authority</p>
+        </div>
+        <div class="col-10">
+          <h2 id="authority-title-en" class="section__title" data-reveal="fade-up">
+            Geology doesn't lie.
+          </h2>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat__number">
+                <span data-counter="90" data-counter-decimals="0">0</span>
+                <span class="stat__suffix">%</span>
+              </span>
+              <span class="stat__label">of the world's emerald market comes from Colombia</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">
+                <span data-counter="19" data-counter-decimals="0">0</span>
+                <span class="stat__suffix">/ 20</span>
+              </span>
+              <span class="stat__label">highest-priced emeralds at auction are Colombian</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">
+                <span data-counter="500" data-counter-decimals="0">0</span>
+                <span class="stat__suffix">yrs</span>
+              </span>
+              <span class="stat__label">the Muzo mine has produced the world's finest emeralds</span>
+            </div>
+          </div>
+          <p class="section__body" data-reveal="fade-up">
+            Colombian emeralds form in sedimentary rock through hydrothermal fluid movement — the only major origin with this process. It produces what auction houses call "the classic emerald green."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper2" aria-labelledby="mines-title-en">
+      <div class="container">
+        <p class="section__eyebrow">02 — The three mines</p>
+        <h2 id="mines-title-en" class="section__title" style="max-width: 18ch; margin-bottom: var(--space-xl);">
+          Each mine, a distinct green.
+        </h2>
+        <div class="grid" data-triptych>
+          <article class="col-4">
+            <p class="t-meta" style="color: var(--bronze); margin-bottom: var(--space-sm);">01</p>
+            <h3 class="t-h3">Muzo</h3>
+            <p class="section__body" style="margin-top: var(--space-sm);">
+              Deep, warm, saturated green. The mine that has produced the world's finest emeralds for five centuries.
+            </p>
+          </article>
+          <article class="col-4">
+            <p class="t-meta" style="color: var(--bronze); margin-bottom: var(--space-sm);">02</p>
+            <h3 class="t-h3">Chivor</h3>
+            <p class="section__body" style="margin-top: var(--space-sm);">
+              Bluish-green, crystalline, brilliant. Named in the Muisca language "Somondoco" — god of the green stones.
+            </p>
+          </article>
+          <article class="col-4">
+            <p class="t-meta" style="color: var(--bronze); margin-bottom: var(--space-sm);">03</p>
+            <h3 class="t-h3">Coscuez</h3>
+            <p class="section__body" style="margin-top: var(--space-sm);">
+              Intense green with yellow undertones. The mine rediscovered in the modern era, producing stones of singular character.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fura-tena" class="fura-tena" aria-labelledby="fura-tena-title-en">
+      <div class="container">
+        <p class="section__eyebrow">03 — Mythological origin</p>
+        <div class="fura-tena__grid" style="margin-top: var(--space-lg);">
+          <h2 id="fura-tena-title-en" class="fura-tena__kicker">
+            Fura and Tena, or why the stone weeps.
+          </h2>
+          <div class="fura-tena__narrative" data-narrative>
+            <span class="narrative-line">Fifteen centuries ago, the Muisca people of the Andean plateau told of Fura, the mortal, and Tena, her lover. When Fura betrayed him, the god Áre's wrath turned the pair into two mountains.</span>
+            <span class="narrative-line">Fura rises 840 metres above the Minero valley in Colombia. Tena stands beside her. The tears Fura shed — legend says — became the emeralds scattered across the Muzo mineland.</span>
+            <span class="narrative-line">Fifteen hundred years later, science has confirmed the geology. The legend survives in every stone pulled from Colombian earth.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="piece-orbit"
+             class="piece-orbit"
+             data-piece-orbit
+             data-frame-count="192"
+             data-frame-base="/assets/frames/piece-orbit/frame_"
+             data-frame-pad="4"
+             data-frame-ext="webp"
+             data-section-vh="150"
+             aria-labelledby="piece-orbit-title-en">
+      <div class="piece-orbit__pin">
+        <canvas class="piece-orbit__canvas" aria-hidden="true"></canvas>
+        <div class="piece-orbit__overlay">
+          <div class="piece-orbit__overlay-inner">
+            <p class="t-meta" style="color: var(--bronze);">05 — Piece in detail</p>
+            <h2 id="piece-orbit-title-en" class="piece-orbit__title">Tena — 4.1 ct Muzo, platinum.</h2>
+            <p class="piece-orbit__body">
+              An exceptional Muzo cushion, set on a pavé-diamond platinum band. Fura's counterpart — heavier silhouette, unapologetic presence. One of a kind, available on request.
+            </p>
+            <a class="btn btn--gold piece-orbit__cta" href="/en/contact/?piece=sur-demande">
+              Inquire about this piece <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-final" class="cta-final" data-cta-final aria-labelledby="cta-final-title-en">
+      <div class="cta-final__inner">
+        <p class="cta-final__eyebrow" data-reveal-child>04 — Pieces on request</p>
+        <h2 id="cta-final-title-en" class="cta-final__title" data-reveal-child>
+          Every stone has a story. Ask for this one.
+        </h2>
+        <p class="cta-final__body" data-reveal-child>
+          Private consultation — in Montréal or remote. We respond within 48 hours.
+        </p>
+        <a class="btn btn--gold" href="/en/contact/" data-reveal-child>
+          Contact us <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid">
+        <div class="col-4">
+          <p class="t-h3" style="margin-bottom: var(--space-sm);">Emerald</p>
+          <p class="t-caption" style="color: var(--stone); max-width: 32ch;">
+            Colombian emeralds, reimagined for the Canadian collector.
+          </p>
+        </div>
+        <nav class="col-3" aria-label="Footer navigation">
+          <p class="t-meta" style="margin-bottom: var(--space-sm);">Navigation</p>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 0.5rem;">
+            <li><a href="/en/collections/">Collections</a></li>
+            <li><a href="/en/heritage/">Heritage</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="col-3">
+          <p class="t-meta" style="margin-bottom: var(--space-sm);">Follow</p>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 0.5rem;">
+            <li><a href="#" rel="noopener">Instagram</a></li>
+            <li><a href="#" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <p class="t-meta" style="margin-bottom: var(--space-sm);">Contact</p>
+          <a href="mailto:contact@emerald.co">contact@emerald.co</a>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>© 2026 Emerald · Montréal, Québec</span>
+        <span><a href="/en/privacy/">Privacy policy</a></span>
+      </div>
+      <span class="site-footer__demo-note">
+        Portfolio demonstration — <a href="https://ramirez.dev" rel="noopener">Álvaro Ramírez Núñez</a>.
+      </span>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

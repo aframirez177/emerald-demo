@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Emerald</title>
+  <meta name="description" content="Page introuvable · Page not found.">
+  <meta name="robots" content="noindex">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .nf {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: var(--gutter);
+      text-align: center;
+    }
+    .nf__code {
+      font-family: var(--font-display);
+      font-size: clamp(8rem, 22vw, 18rem);
+      line-height: 0.95;
+      letter-spacing: var(--tracking-tight);
+      color: var(--bronze);
+      margin-bottom: var(--space-md);
+    }
+    .nf__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: var(--tracking-tight);
+      max-width: 22ch;
+      margin-inline: auto;
+      margin-bottom: var(--space-md);
+    }
+    .nf__sub {
+      font-size: var(--fs-body);
+      color: var(--stone);
+      max-width: 42ch;
+      margin-inline: auto;
+      margin-bottom: var(--space-lg);
+    }
+    .nf__links {
+      display: inline-flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div>
+      <p class="nf__code" aria-hidden="true">404</p>
+      <h1 class="nf__title">La pierre que vous cherchez n'est pas ici. · This stone isn't here.</h1>
+      <p class="nf__sub">
+        La page n'existe pas ou a été déplacée. · The page doesn't exist or has moved.
+      </p>
+      <p class="nf__links">
+        <a class="btn" href="/fr/">Retour à l'accueil</a>
+        <a class="btn btn--ghost" href="/en/">Back to home</a>
+      </p>
+    </div>
+  </main>
+</body>
+</html>

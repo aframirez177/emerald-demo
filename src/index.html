@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emerald — Émeraudes colombiennes</title>
+  <meta name="description" content="Bijoux d'émeraude colombienne — Muzo, Chivor, Coscuez. Pierres certifiées, atelier québécois.">
+  <meta name="robots" content="noindex">
+
+  <link rel="alternate" hreflang="fr-CA" href="/fr/">
+  <link rel="alternate" hreflang="en-CA" href="/en/">
+  <link rel="alternate" hreflang="x-default" href="/fr/">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body>
+  <main class="splash">
+    <div>
+      <h1 class="splash__brand">Emerald</h1>
+      <p class="t-caption" style="color: var(--stone); margin-bottom: var(--space-lg);">
+        Choose your language · Choisissez votre langue
+      </p>
+      <div class="splash__choice">
+        <a class="btn btn--ghost" href="/fr/">Français</a>
+        <a class="btn btn--ghost" href="/en/">English</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { redirectFromSplash } from "/assets/js/i18n.js";
+    // Auto-redirect with a 400ms delay so the splash briefly shows before jumping.
+    setTimeout(redirectFromSplash, 400);
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/fr/">
+  </noscript>
+</body>
+</html>

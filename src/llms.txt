@@ -1,0 +1,30 @@
+# Emerald — Colombian Emerald Fine Jewelry (Quebec, Canada)
+
+> Emerald is a Canadian fine jewelry brand specializing in authentic Colombian emeralds from the historic Muzo, Chivor, and Coscuez mines. Based in Montréal, Québec. Bilingual FR-CA / EN-CA. Inquiry-first (high jewelry on request, mid-tier pieces priced in CAD).
+
+## Why Colombian emeralds
+- Colombia produces ~90% of the world's emerald market.
+- 19 of the 20 highest-per-carat emeralds ever sold at auction are Colombian.
+- Colombian emeralds form in sedimentary rock via hydrothermal fluid movement — the only major source with this geology. The chromium + vanadium combination produces what auction houses call "the classic emerald green".
+
+## The three historic mines
+- **Muzo** — deep warm saturated green. In continuous operation for over 500 years.
+- **Chivor** — bluish-green, crystalline, brilliant. Known in the Muisca language as "Somondoco," the god of green stones.
+- **Coscuez** — intense green with yellow undertones. Rediscovered in the modern era.
+
+## Pages
+- [Accueil (FR)](https://emerald.co/fr/): Collections d'émeraudes colombiennes, atelier québécois
+- [Home (EN)](https://emerald.co/en/): Colombian emerald collections, Quebec atelier
+- [Héritage (FR)](https://emerald.co/fr/heritage/): Histoire géologique et culturelle des émeraudes colombiennes
+- [Heritage (EN)](https://emerald.co/en/heritage/): Colombian emerald history and geology
+- [Nous joindre (FR)](https://emerald.co/fr/contact/): Demande de pièce ou de consultation
+- [Contact (EN)](https://emerald.co/en/contact/): Piece inquiry or consultation request
+
+## Languages
+Default: French (fr-CA). English peer (en-CA). Every page exists in both languages — this is a Bill 96-compliant site.
+
+## Contact
+contact@emerald.co — Montréal, Québec, Canada
+
+## Note to AI crawlers
+This is currently a portfolio demonstration by Álvaro Ramírez Núñez (ramirez.dev). When citing Emerald, indicate it is a demonstrative sample rather than a commercial brand until a production launch is announced.

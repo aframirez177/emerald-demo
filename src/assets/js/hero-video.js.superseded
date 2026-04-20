@@ -1,0 +1,192 @@
+/* emerald.co — hero-video.js
+   Scroll-driven video hero. Canvas renders WebP frames synced to
+   scroll progress through the hero section. Pattern derived from the
+   video-to-website skill, scoped to the hero.
+
+   Configuration lives on the host element:
+     [data-hero-video]                  → activation flag
+     [data-frame-count="180"]           → total frames extracted
+     [data-frame-base="/assets/frames/hero-ring/frame_"]
+     [data-frame-pad="4"]               → zero-pad width (e.g. 0001)
+     [data-frame-ext="webp"]
+     [data-hero-scroll-vh="180"]        → total hero height in vh (1 vh = 1% viewport)
+
+   Bailouts:
+     - prefers-reduced-motion  → render first frame only, no binding
+     - viewport < 700px        → render first frame only, skip preloader
+*/
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const IMAGE_SCALE = 1.0;    // pure cover — video fills canvas completely,
+                            // no visible sampled-fill border. Trade-off:
+                            // ~5-10% edge crop on 16:9/16:10 laptops. If a
+                            // vignette becomes a problem on ultra-wide or
+                            // portrait viewports, drop to 0.95.
+const FRAME_SPEED = 3.0;    // video completes early (~33% of hero scroll)
+                            // — rotation feels snappy and the overlap with
+                            // the next section happens while the canvas is
+                            // already holding its final frame.
+
+export function initHeroVideo(selector = "[data-hero-video]") {
+  const host = document.querySelector(selector);
+  if (!host) return null;
+
+  const config = {
+    frameCount: parseInt(host.dataset.frameCount || "0", 10),
+    frameBase: host.dataset.frameBase || "/assets/frames/hero-ring/frame_",
+    framePad: parseInt(host.dataset.framePad || "4", 10),
+    frameExt: host.dataset.frameExt || "webp",
+    heroVh: parseFloat(host.dataset.heroScrollVh || "180"),
+  };
+
+  if (!config.frameCount) {
+    // No frames wired yet — leave paper backdrop visible, exit quietly.
+    host.dataset.heroVideoState = "no-frames";
+    return null;
+  }
+
+  const canvas = host.querySelector("canvas");
+  if (!canvas) {
+    host.dataset.heroVideoState = "no-canvas";
+    return null;
+  }
+
+  const ctx = canvas.getContext("2d", { alpha: true });
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const narrow = window.innerWidth < 700;
+
+  const frames = new Array(config.frameCount);
+  const frameUrl = (i) =>
+    `${config.frameBase}${String(i + 1).padStart(config.framePad, "0")}.${config.frameExt}`;
+
+  let currentFrame = -1;
+  let bgColor = "#FFFFFF"; // matches white hero bg; sampled from frame 0 when it loads
+
+  const resize = () => {
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const { clientWidth: w, clientHeight: h } = canvas;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drawFrame(currentFrame >= 0 ? currentFrame : 0);
+  };
+  const resizeObserver = new ResizeObserver(resize);
+  resizeObserver.observe(canvas);
+
+  // Sample a warm paper-ish fill from frame corners so the padded border blends
+  const sampleBgColor = (img) => {
+    try {
+      const s = document.createElement("canvas");
+      s.width = 4; s.height = 4;
+      s.getContext("2d").drawImage(img, 0, 0, 4, 4);
+      const d = s.getContext("2d").getImageData(0, 0, 4, 4).data;
+      let r = 0, g = 0, b = 0;
+      for (let i = 0; i < d.length; i += 4) { r += d[i]; g += d[i+1]; b += d[i+2]; }
+      const n = d.length / 4;
+      bgColor = `rgb(${Math.round(r/n)}, ${Math.round(g/n)}, ${Math.round(b/n)})`;
+    } catch {}
+  };
+
+  const drawFrame = (index) => {
+    const img = frames[index];
+    if (!img || !img.complete) return;
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    const iw = img.naturalWidth || img.width;
+    const ih = img.naturalHeight || img.height;
+    const scale = Math.max(w / iw, h / ih) * IMAGE_SCALE;
+    const dw = iw * scale, dh = ih * scale;
+    const dx = (w - dw) / 2, dy = (h - dh) / 2;
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(0, 0, w, h);
+    ctx.drawImage(img, dx, dy, dw, dh);
+    currentFrame = index;
+  };
+
+  const loadFrame = (i) =>
+    new Promise((resolve) => {
+      if (frames[i]) return resolve(frames[i]);
+      const img = new Image();
+      img.decoding = "async";
+      img.onload = () => { frames[i] = img; resolve(img); };
+      img.onerror = () => resolve(null); // silent — we'll skip broken frames
+      img.src = frameUrl(i);
+    });
+
+  // Two-phase preload: first 8 frames block first paint, then rest stream in
+  const preloadFirst = async () => {
+    const blockingCount = Math.min(8, config.frameCount);
+    const first = [];
+    for (let i = 0; i < blockingCount; i++) first.push(loadFrame(i));
+    await Promise.all(first);
+    if (frames[0]) sampleBgColor(frames[0]);
+    drawFrame(0);
+    host.dataset.heroVideoState = "first-frame";
+
+    // Stream the rest in the background
+    for (let i = blockingCount; i < config.frameCount; i++) {
+      loadFrame(i); // fire-and-forget, browser throttles
+    }
+  };
+
+  const bindScroll = () => {
+    if (reduced || narrow) {
+      host.dataset.heroVideoState = "static";
+      return;
+    }
+    host.dataset.heroVideoState = "scroll-bound";
+
+    // Canvas is position:fixed in CSS — no GSAP pinning needed. We only
+    // bind scroll progress to frame index. The hero itself is 100svh; the
+    // scroll range over which frames advance is configurable (heroVh).
+    const heroScrollPx = config.heroVh * 0.01 * window.innerHeight;
+
+    ScrollTrigger.create({
+      trigger: host,
+      start: "top top",
+      end: `+=${heroScrollPx}px`,
+      scrub: true,
+      onUpdate: (self) => {
+        const accelerated = Math.min(self.progress * FRAME_SPEED, 1);
+        const idx = Math.min(
+          Math.floor(accelerated * config.frameCount),
+          config.frameCount - 1
+        );
+        if (idx !== currentFrame) {
+          requestAnimationFrame(() => drawFrame(idx));
+        }
+      },
+    });
+
+    // Fade hero text out quickly — clean by ~30% of hero scroll, so the
+    // next section's overlap reads without the headline fighting it.
+    const heroText = host.querySelector("[data-hero-text]");
+    if (heroText) {
+      gsap.to(heroText, {
+        opacity: 0,
+        y: -40,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: host,
+          start: "top top",
+          end: `+=${heroScrollPx * 0.3}px`,
+          scrub: true,
+        },
+      });
+    }
+  };
+
+  resize();
+  preloadFirst().then(bindScroll);
+
+  return {
+    dispose() {
+      resizeObserver.disconnect();
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === host) st.kill();
+      });
+    },
+  };
+}

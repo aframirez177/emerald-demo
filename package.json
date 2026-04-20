@@ -1,0 +1,16 @@
+{
+  "name": "emerald-co",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Luxury Colombian emerald jewelry demo — Quebec market.",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs"
+  },
+  "dependencies": {
+    "lenis": "^1.1.20",
+    "gsap": "^3.12.5",
+    "three": "^0.160.1"
+  }
+}
